@@ -30,9 +30,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/lib/styles/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/lib/scripts/bootstrap.min.js",
+              "src/lib/scripts/code.jquery.com_jquery-3.7.0.min.js"
+            ]
           },
           "configurations": {
             "production": {
