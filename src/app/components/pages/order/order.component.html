@@ -1,0 +1,82 @@
+<div class="container">
+
+  <h2 class="h2-title">Сделать заказ</h2>
+
+  <form class="row" [formGroup]="orderForm">
+    <div class="col-md-12 input-field">
+      <label for="inputProduct" class="form-label">Продукт</label>
+      <input type="text" class="form-control" formControlName="inputProduct" id="inputProduct">
+      <div class="text-danger" *ngIf="submitted && inputProduct?.invalid || inputProduct?.invalid && inputProduct?.errors?.['required']">
+        Выберите продукт
+      </div>
+    </div>
+    <div class="col-md-6 input-field">
+      <label for="inputName" class="form-label">Имя</label>
+      <input type="text" class="form-control" formControlName="inputName" id="inputName">
+      <div *ngIf="submitted && inputName?.invalid || inputName?.invalid && (inputName?.dirty || inputName?.touched)">
+        <div class="text-danger" *ngIf="inputName?.errors?.['required']">
+          Обязательное поле
+        </div>
+        <div class="text-danger" *ngIf="inputName?.errors?.['pattern']">
+          Имя должно содержать только буквы
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 input-field">
+      <label for="inputSurname" class="form-label">Фамилия</label>
+      <input type="text" class="form-control" formControlName="inputSurname" id="inputSurname">
+      <div *ngIf="submitted && inputSurname?.invalid || inputSurname?.invalid && (inputSurname?.dirty || inputSurname?.touched)">
+        <div class="text-danger" *ngIf="inputSurname?.errors?.['required']">
+          Обязательное поле
+        </div>
+        <div class="text-danger" *ngIf="inputSurname?.errors?.['pattern']">
+          Фамилия должно содержать только буквы
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 input-field">
+      <label for="inputPhone" class="form-label">Телефон</label>
+      <input type="text" class="form-control" formControlName="inputPhone" id="inputPhone">
+      <div *ngIf="submitted && inputPhone?.invalid || inputPhone?.invalid && (inputPhone?.dirty || inputPhone?.touched)">
+        <div class="text-danger" *ngIf="inputPhone?.errors?.['required']">
+          Обязательное поле
+        </div>
+        <div class="text-danger" *ngIf="inputPhone?.errors?.['pattern']">
+          Некорректный номер
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 input-field">
+      <label for="inputCountry" class="form-label">Страна</label>
+      <input type="text" class="form-control" formControlName="inputCountry" id="inputCountry">
+    </div>
+    <div class="col-10 input-field">
+      <label for="inputAddress" class="form-label">Адрес</label>
+      <input type="text" class="form-control" formControlName="inputAddress" id="inputAddress">
+      <div *ngIf="submitted && inputAddress?.invalid || inputAddress?.invalid && (inputAddress?.dirty || inputAddress?.touched)">
+        <div class="text-danger" *ngIf="inputAddress?.errors?.['required']">
+          Обязательное поле
+        </div>
+        <div class="text-danger" *ngIf="inputAddress?.errors?.['pattern']">
+          Некорректный адрес
+        </div>
+      </div>
+    </div>
+    <div class="col-2 input-field">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" formControlName="inputZip" id="inputZip">
+    </div>
+    <div class="col-12 input-field">
+      <label for="inputComment" class="form-label">Комментарий</label>
+      <input type="text" class="form-control" formControlName="inputComment" id="inputComment">
+    </div>
+    <div class="col-12 col-btn mt-3">
+      <button type="submit" class="btn btn-primary w-100" (click)="sendOrder()">Отправить</button>
+    </div>
+  </form>
+
+  <!--  <div class="popup h2" id="popup">-->
+  <!--    <div>Спасибо за заказ.</div>-->
+  <!--    Мы свяжемся с вами в ближайшее время!-->
+  <!--  </div>-->
+</div>

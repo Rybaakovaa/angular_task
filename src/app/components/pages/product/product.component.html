@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div class="card">
+    <h5 class="card-title">{{product.title}}</h5>
+    <div class="d-flex justify-content-between">
+      <img src="{{product.image}}" class="card-img" alt="image + {{product.id}}">
+      <div class="d-flex flex-column justify-content-between">
+        <div></div>
+        <div class="card-text">{{product.description}} </div>
+        <div class="d-flex justify-content-between">
+          <div class="d-flex align-items-center fw-semibold">
+            {{product.price | currency: "RUB": "руб."}}
+          </div>
+          <a class="btn btn-primary w-50" [routerLink]="['/order']" [queryParams]="{ product: product.title }">Купить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

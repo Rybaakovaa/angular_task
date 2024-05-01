@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "task_22": {
+      "i18n": {
+        "sourceLocale": "ru-RU"
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,12 +33,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/lib/styles/bootstrap.min.css",
+              "node_modules/jquery-ui/dist/themes/base/jquery-ui.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "src/lib/scripts/bootstrap.min.js",
-              "src/lib/scripts/code.jquery.com_jquery-3.7.0.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/dist/jquery-ui.min.js"
             ]
           },
           "configurations": {

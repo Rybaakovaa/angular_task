@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h2 class="h2-title">Наши чайные коллекции</h2>
+  <div class="cards">
+    <div class="card" *ngFor="let product of products">
+<!--      <product-component product></product-component>-->
+      <img src="{{product.image}}" class="card-img" alt="image + {{product.id}}">
+      <h5 class="card-title">{{product.title}}</h5>
+      <div class="card-text">{{product.description | textCut}} </div>
+      <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center fw-semibold">
+          {{product.price | currency: "RUB": "руб."}}
+        </div>
+<!--        <a class="btn btn-primary w-50" routerLink='/order'>Заказать</a>-->
+        <a class="btn btn-primary w-50" [routerLink]="['/order']" [queryParams]="{ product: product.title }">Заказать</a>
+      </div>
+      <a class="btn btn-outline-primary mt-2" [routerLink]="['/product', product.id]">Подробнее</a>
+    </div>
+  </div>
+
+</div>
