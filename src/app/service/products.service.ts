@@ -15,7 +15,7 @@ export class ProductsService {
   }
 
   getProduct(id: string): Observable<ProductType> {
-    return this.http.get<ProductType>('http://testologia.ru/tea?id=' + id)
+    return this.http.get<ProductType>('https://testologia.ru/tea?id=' + id)
   }
 
   createOrder(data: {
@@ -29,6 +29,6 @@ export class ProductsService {
     comment: string,
   }) {
     console.log(data)
-    return this.http.post<{ success: boolean, message?: string }>('http://testologia.ru/order-tea', data)
+    return this.http.post<{ success: boolean, message?: string }>('https://testologia.ru/order-tea', data)
   }
 }
