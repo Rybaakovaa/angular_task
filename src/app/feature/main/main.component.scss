@@ -1,0 +1,141 @@
+#exampleModal {
+  //display: block;
+}
+
+.popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.49);
+  z-index: 9;
+}
+
+.popup div {
+  background-color: white;
+  padding: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  //color: black;
+  z-index: 9;
+}
+
+//.slick-next {
+//  right: 13px;
+//}
+//
+//.slick-prev {
+//  left: 13px;
+//  z-index: 999;
+//}
+//
+//.slick-next:before,
+//.slick-prev:before {
+//  content: '';
+//  display: block;
+//  height: 20px;
+//  background-repeat: no-repeat;
+//  background-position: center;
+//}
+//
+//.slick-next:before {
+//  background-image: url("../assets/images/next.png");
+//  width: 42px;
+//}
+//
+//.slick-prev:before {
+//  background-image: url("../assets/images/prev.png");
+//  width: 38px;
+//}
+//
+//.slick-next,
+//.slick-prev {
+//  padding: 0;
+//  color: #076BFF;
+//  border-radius: 50%;
+//  border: 1px solid #076BFF;
+//  background: #FFFFFF;
+//  width: 40px;
+//  height: 40px;
+//}
+//
+//.slick-prev:hover, .slick-prev:focus,
+//.slick-next:hover, .slick-next:focus {
+//  color: #076BFF;
+//  background: #FFFFFF;
+//}
+
+.carousel-item-temp {
+  max-width: 1318px;
+  max-height: 640px;
+}
+
+.img-width {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+#accordion {
+  max-width: 856px;
+  margin: 0 auto 16px auto;
+}
+
+#accordion h3 {
+  margin: 8px 0;
+  border-radius: 10px;
+  min-height: 69px;
+  background: linear-gradient(0deg, #076BFF 0%, #007BFF 100%);
+
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 23px 0 28px;
+}
+
+#accordion h3:last-child {
+  margin-bottom: 0;
+}
+
+#accordion h3:first-child {
+  margin-top: 0;
+}
+
+.accordion-item {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.ui-state-active .ui-icon-triangle-1-s {
+  background-image: url("../../../assets/images/svg/next.svg");
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+.ui-icon {
+  transition: transform 0.5s
+}
+
+.ui-icon-triangle-1-e,
+.ui-state-hover .ui-icon-triangle-1-e {
+  background-image: url("../../../assets/images/svg/next.svg");
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
