@@ -13,7 +13,7 @@ const routes: Routes = [
       {path: 'products', loadChildren: () => import('./feature/products/products.module').then(m => m.ProductsModule)},
     ]
   },
-  // { path: 'product/:id', component: ProductComponent},
+  // { path: 'product-page/:id', component: ProductComponent},
   { path: '**', redirectTo: ''},
 ];
 
