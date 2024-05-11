@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-docs": "ng build --output-path docs",
+    "build-docs": "ng build --output-path docs --base-href /angular_task/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
