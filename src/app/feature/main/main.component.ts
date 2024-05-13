@@ -1,6 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from "rxjs";
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Subject} from "rxjs";
 import {PopupService} from "../../shared/service/popup.service";
+import {PopupComponent} from "../../shared/components/popup/popup.component";
 
 declare var $: any;
 
@@ -12,12 +13,22 @@ declare var $: any;
 export class MainComponent implements OnInit, OnDestroy{
 
   public showPopup: boolean = true;
-  private subscription: Subscription | undefined;
+  private subscription: Subject<boolean> = this.popupService.myObservable;
+
+
+  @ViewChild(PopupComponent)
+  private popupComponent!: PopupComponent;
 
   constructor(private popupService: PopupService) {
   }
 
   ngOnInit() {
+    this.popupService.startTimer();
+    this.subscription.subscribe(data => {
+      console.log(data);
+      this.popupComponent.open();
+    });
+
     $( function() {
       $( "#accordion" ).accordion({
         heightStyle: "content",
@@ -31,12 +42,12 @@ export class MainComponent implements OnInit, OnDestroy{
     //   console.log(param);
     // })
 
-    this.subscription = this.popupService.myObservable$.subscribe((data) => {
-      console.log(data); // Обработка данных от Observable
-    });
+    // this.subscription = this.popupService.myObservable$.subscribe((data) => {
+    //   console.log(data); // Обработка данных от Observable
+    // });
   }
 
   ngOnDestroy() {
-    this.subscription?.unsubscribe();
+    // this.subscription?.unsubscribe();
   }
 }
