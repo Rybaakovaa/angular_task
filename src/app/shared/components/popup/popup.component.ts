@@ -20,4 +20,8 @@ export class PopupComponent {
     this.modalService.open(this.popup);
   }
 
+  close(): void {
+    this.modalService.dismissAll();
+  }
+
 }
